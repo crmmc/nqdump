@@ -9,15 +9,17 @@ bool convertFile(const string &filename);
 
 
 int main(int argc, char **argv) {
-    if (argc != 2) {
-        cerr << "Usage: nqdump <input_file_path>" << endl;
+    if (argc < 2) {
+        cerr << "A tools to decrypt ncm,qmc0,qmc3,qmcflac file" << endl;
+        cerr << "Usage: \n nqdump <input_file1> <input_file2> <input_file3> <...>" << endl;
         return 1;
     }
-    string in = argv[1];
-    if (convertFile(in) == true)
-        return 0;
-    else
-        return -1;
+    int yt = argc - 2;
+    while (yt > 0) {
+        string in = argv[yt];
+        bool result = convertFile(in);
+        yt--;
+    }
 }
 
 
