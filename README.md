@@ -6,8 +6,16 @@
 ##### 本项目依赖第三方C++库：Taglib
 
 ** Instructions ** 
-** 使用方法 **  
-
+** 使用方法 ** 
+   
+ ** On Windows **  
+  
+### 在Windows下编译和使用taglib有大坑，我好不容易编译好了一份，放在网盘上供大家下载使用。当然，你也可以自己编译，编译使用的源码是 2020.05.10 的github源码  
+>  https://lanzous.com/icgo8ej  
+将要解密的文件拖放到nqdump.exe上即可自动解密,可使用  
+nqdump.exe <inputfile1> <inputfile2> ...  
+的格式来逐项解密多个音乐文件
+  
  ** On Linux ** 
 ```
 ##### 编译程序  
