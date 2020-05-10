@@ -14,12 +14,13 @@ int main(int argc, char **argv) {
         cerr << "Usage: \n nqdump <input_file1> <input_file2> <input_file3> <...>" << endl;
         return 1;
     }
-    int yt = argc - 2;
+    int yt = argc - 1;
     while (yt > 0) {
         string in = argv[yt];
         bool result = convertFile(in);
         yt--;
     }
+    cout << "Done!" << endl;
     return 0;
 }
 
