@@ -20,6 +20,7 @@ int main(int argc, char **argv) {
         bool result = convertFile(in);
         yt--;
     }
+    return 0;
 }
 
 
