@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
     int yt = argc - 1;
     while (yt > 0) {
         string in = argv[yt];
-        #printf ("ARGV: %s\n",argv[yt]);
+        // printf ("ARGV: %s\n",argv[yt]);
         bool result = convertFile(in);
         yt--;
     }
