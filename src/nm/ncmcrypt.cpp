@@ -53,10 +53,12 @@ static void replace(std::string& str, const std::string& from, const std::string
 
 static std::string fileNameWithoutExt(const std::string& str)
 {
-	size_t lastPath = str.find_last_of("/\\");
-	std::string path = str.substr(lastPath+1);
-	size_t lastExt = path.find_last_of(".");
-	return path.substr(0, lastExt);
+	//size_t lastPath = str.find_last_of("/\\");
+	//std::string path = str.substr(lastPath+1);
+	//size_t lastExt = path.find_last_of(".");
+	//return path.substr(0, lastExt);
+	size_t lastExt = str.find_last_of(".");
+	return str.substr(0, lastExt);
 }
 
 NeteaseMusicMetadata::~NeteaseMusicMetadata() {

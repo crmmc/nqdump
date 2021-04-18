@@ -10,6 +10,7 @@ bool convertFile(const string &filename);
 
 int main(int argc, char **argv) {
     if (argc < 2) {
+        cerr << "Nqdump V1.1 Bate" << endl;
         cerr << "A tools to decrypt ncm,qmc0,qmc3,qmcflac file" << endl;
         cerr << "Usage: \n nqdump <input_file1> <input_file2> <input_file3> <...>" << endl;
         return 1;
@@ -17,7 +18,6 @@ int main(int argc, char **argv) {
     int yt = argc - 1;
     while (yt > 0) {
         string in = argv[yt];
-        // printf ("ARGV: %s\n",argv[yt]);
         bool result = convertFile(in);
         yt--;
     }
@@ -29,6 +29,7 @@ int main(int argc, char **argv) {
 bool convertFile(const string &filename) {
     auto pos = filename.rfind('.');
     if (pos == string::npos) {
+        cerr << "Argv: " << filename << endl;
         cerr << "Warning: no extname." << endl;
         return false;
     } else {
@@ -40,8 +41,10 @@ bool convertFile(const string &filename) {
                 cout << "Dumping to flac: " << base + ext << endl;
                 return convert(filename, base + ext);
             } catch (invalid_argument e) {
+                cerr << "Argv: " << filename << endl;
                 cout << "exception: " << e.what() << endl;
             } catch (...) {
+                cerr << "Argv: " << filename << endl;
                 cout << "unexcept exception!" << endl;
             }
             return false;
@@ -51,8 +54,10 @@ bool convertFile(const string &filename) {
                 cout << "Dumping to mp3: " << base + ext << endl;
                 return convert(filename, base + ext);
             } catch (invalid_argument e) {
+                cerr << "Argv: " << filename << endl;
                 cout << "exception: " << e.what() << endl;
             } catch (...) {
+                cerr << "Argv: " << filename << endl;
                 cout << "unexcept exception!" << endl;
             }
             return false;
@@ -63,14 +68,16 @@ bool convertFile(const string &filename) {
                 crypt.FixMetadata();
                 cout << "Dumped NCM: " << crypt.dumpFilepath() << endl;
             } catch (invalid_argument e) {
+                cerr << "Argv: " << filename << endl;
                 cout << "exception: " << e.what() << endl;
             } catch (...) {
+                cerr << "Argv: " << filename << endl;
                 cout << "unexcept exception!" << endl;
             }
             return true;
         } else {
-            cerr << "Warning: unknown extname (support: ncm,qmcflac, qmc0, qmc3)."
-                 << endl;
+            cerr << "Argv: " << filename << endl;
+            cerr << "Warning: unknown extname (support: ncm,qmcflac, qmc0, qmc3)." << endl;
             return false;
         }
         return false;

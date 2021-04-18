@@ -3,4 +3,4 @@ all:
 	strip nqdump
 
 install: all
-	mv nqdump /usr/local/bin
+	mv nqdump /usr/bin/
