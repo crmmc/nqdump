@@ -1,4 +1,5 @@
 # nqdump （现在建议使用经过我重构的Go语言版本nqdumpgo，支持了多线程，提高了不少效率，C++版本停更）
+新版地址： > https://github.com/crmmc/nqdumpgo
 *A C++ tools to decrypt ncm,qmc0,qmc3,qmcflac to origin file*
 *一个由C++编写的用于解密被网易云音乐或QQ音乐加密的文件的程序*
 ---
